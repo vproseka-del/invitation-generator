@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Письмо-приглашение</h1>
+    <p class="hint">Проверьте текст и при необходимости отредактируйте его перед копированием.</p>
+
+    <textarea id="letter-text" rows="20">{{ letter_text }}</textarea>
+
+    {% if report %}
+    <section class="report">
+        <h2>Проверка текста</h2>
+        <p class="report-status report-status-{{ report.overall_status }}">
+            {% if report.overall_status == "passed" %}
+                ✔ Overall Status: Passed
+            {% elif report.overall_status == "passed_with_warnings" %}
+                Overall Status: Passed with warnings
+            {% else %}
+                Overall Status: Failed
+            {% endif %}
+        </p>
+        {% if report.issues %}
+        <ul class="report-issues">
+            {% for issue in report.issues %}
+            <li class="report-issue report-issue-{{ issue.severity }}">
+                <div class="report-issue-head">
+                    <span class="badge badge-{{ issue.severity }}">{{ issue.severity }}</span>
+                    <span class="source">Источник: {{ issue.source }}</span>
+                    <span class="rule-id">{{ issue.id }}</span>
+                </div>
+                <p class="report-message">{{ issue.message }}</p>
+                {% if issue.fragment %}<p class="report-fragment">Найдено: «{{ issue.fragment }}»</p>{% endif %}
+                {% if issue.recommendation %}<p class="report-recommendation">Рекомендация: {{ issue.recommendation }}</p>{% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </section>
+    {% endif %}
+
+    <div class="actions">
+        <button type="button" class="btn" onclick="copyLetter()">Скопировать</button>
+        <a class="btn btn-secondary" href="{{ url_for('main.letter') }}">Создать другое письмо</a>
+        <a class="btn btn-secondary" href="{{ url_for('main.index') }}">На главную</a>
+        <p id="copy-status" class="hint"></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/copy.js') }}"></script>
+{% endblock %}

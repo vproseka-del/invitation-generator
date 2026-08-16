@@ -1,0 +1,42 @@
+{
+  "version": "1.2",
+  "updated": "2026-08-16",
+  "letters": [
+    {
+      "id": "0001",
+      "author": "В.И. Ворона",
+      "recipient_type": "спонсоры и партнёры",
+      "letter_type": "приглашение к сотрудничеству",
+      "date": "",
+      "source": "предоставлено заказчиком",
+      "letter_file": "letters/rector/0001_letter.md",
+      "metadata_file": "letters/rector/0001_metadata.json",
+      "analyzed": true,
+      "affected_style": true
+    },
+    {
+      "id": "0002",
+      "author": "В.И. Ворона",
+      "recipient_type": "статс-секретарь — заместитель Министра культуры РФ",
+      "letter_type": "запрос о поддержке проекта",
+      "date": "",
+      "source": "предоставлено заказчиком",
+      "letter_file": "letters/ministry/0002_letter.md",
+      "metadata_file": "letters/ministry/0002_metadata.json",
+      "analyzed": true,
+      "affected_style": true
+    },
+    {
+      "id": "0003",
+      "author": "В.И. Ворона",
+      "recipient_type": "ректоры вузов — лауреатов фестиваля",
+      "letter_type": "приглашение на гала-концерт",
+      "date": "2026-05-16",
+      "source": "предоставлено заказчиком",
+      "letter_file": "letters/rector/0003_letter.md",
+      "metadata_file": "letters/rector/0003_metadata.json",
+      "analyzed": true,
+      "affected_style": true
+    }
+  ]
+}

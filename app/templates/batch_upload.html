@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Массовое создание писем</h1>
+    <p class="hint">Загрузите таблицу Excel (.xlsx). Первая строка — заголовки. Обязательные столбцы:
+        {% for label in required_columns %}{{ label }}{% if not loop.last %}, {% endif %}{% endfor %}.</p>
+    <p class="hint">Необязательный столбец:
+        {% for label in optional_columns %}{{ label }}{% if not loop.last %}, {% endif %}{% endfor %}.
+        Тип организации указывается словами (например, «Молодёжная организация» или «Министерство»).</p>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <form method="post" action="{{ url_for('batch.batch') }}" enctype="multipart/form-data">
+        <div class="field">
+            <label for="file">Файл Excel (*.xlsx)</label>
+            <input type="file" id="file" name="file" accept=".xlsx">
+        </div>
+        <button type="submit" class="btn">Загрузить и сформировать письма</button>
+    </form>
+
+    <p class="back-link"><a href="{{ url_for('main.index') }}">На главную</a></p>
+{% endblock %}

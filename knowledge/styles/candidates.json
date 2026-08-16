@@ -1,0 +1,310 @@
+{
+  "model": "Candidate / Core / Context",
+  "updated": "2026-08-16",
+  "candidates": [
+    {
+      "id": "A1",
+      "category": "address",
+      "feature": "Формула обращения «Уважаемый(ая) + обращение!»",
+      "status": "core",
+      "evidence": ["0001", "0002", "0003"],
+      "letters_count": 3,
+      "contexts": ["partner", "ministry", "university"],
+      "conditions": {
+        "min_3_letters": true,
+        "min_3_contexts": true,
+        "topic_independent": true
+      },
+      "next_step": "переведён в Core (VIV_STYLE)",
+      "comments": "Переведён в Core VIV_STYLE 2026-08-16."
+    },
+    {
+      "id": "A2",
+      "category": "tone",
+      "feature": "Официально-деловой, сдержанно-уважительный тон",
+      "status": "core",
+      "evidence": ["0001", "0002", "0003"],
+      "letters_count": 3,
+      "contexts": ["partner", "ministry", "university"],
+      "conditions": {
+        "min_3_letters": true,
+        "min_3_contexts": true,
+        "topic_independent": true
+      },
+      "next_step": "переведён в Core (VIV_STYLE)",
+      "comments": "Переведён в Core VIV_STYLE 2026-08-16."
+    },
+    {
+      "id": "A3",
+      "category": "tone",
+      "feature": "Уважительное «Вы/Вас»",
+      "status": "core",
+      "evidence": ["0001", "0002", "0003"],
+      "letters_count": 3,
+      "contexts": ["partner", "ministry", "university"],
+      "conditions": {
+        "min_3_letters": true,
+        "min_3_contexts": true,
+        "topic_independent": true
+      },
+      "next_step": "переведён в Core (VIV_STYLE)",
+      "comments": "Переведён в Core VIV_STYLE 2026-08-16."
+    },
+    {
+      "id": "A4",
+      "category": "rhetoric",
+      "feature": "Прямой уважительный глагол действия («Приглашаем Вас» / «просим Вас поддержать»)",
+      "status": "core",
+      "evidence": ["0001", "0002", "0003"],
+      "letters_count": 3,
+      "contexts": ["partner", "ministry", "university"],
+      "conditions": {
+        "min_3_letters": true,
+        "min_3_contexts": true,
+        "topic_independent": true
+      },
+      "next_step": "переведён в Core (VIV_STYLE)",
+      "comments": "Переведён в Core VIV_STYLE 2026-08-16."
+    },
+    {
+      "id": "A5",
+      "category": "thinking",
+      "feature": "Стратегия убеждения: значимость проекта + ценности + авторитет команды, без давления",
+      "status": "core",
+      "evidence": ["0001", "0002", "0003"],
+      "letters_count": 3,
+      "contexts": ["partner", "ministry", "university"],
+      "conditions": {
+        "min_3_letters": true,
+        "min_3_contexts": true,
+        "topic_independent": true
+      },
+      "next_step": "переведён в Core (VIV_STYLE)",
+      "comments": "Переведён в Core VIV_STYLE 2026-08-16."
+    },
+    {
+      "id": "A6",
+      "category": "composition",
+      "feature": "Абзац об актуальности («почему сейчас»)",
+      "status": "candidate",
+      "evidence": ["0001", "0002"],
+      "letters_count": 2,
+      "contexts": ["partner", "ministry"],
+      "conditions": {
+        "min_3_letters": false,
+        "min_3_contexts": false,
+        "topic_independent": true
+      },
+      "next_step": "в 0003 аргумент «почему сейчас» не подтверждён (есть только дата события); подтвердить на письме с явной аргументацией актуальности",
+      "comments": ""
+    },
+    {
+      "id": "A7",
+      "category": "lexicon",
+      "feature": "Лексика «традиционные российские духовно-нравственные ценности»",
+      "status": "candidate",
+      "evidence": ["0001", "0002"],
+      "letters_count": 2,
+      "contexts": ["partner", "ministry"],
+      "conditions": {
+        "min_3_letters": false,
+        "min_3_contexts": false,
+        "topic_independent": false
+      },
+      "next_step": "проверить на письме вне темы ценностей; учесть, что в 0002 фраза может быть заимствована из названия Указа Президента № 809",
+      "comments": "Возможно заимствование из нормативного документа, а не личная лексика автора. В 0003 не встречается."
+    },
+    {
+      "id": "A8",
+      "category": "lexicon",
+      "feature": "Тема молодёжи и дарований («молодёжь», «молодые дарования», «талантливые»)",
+      "status": "candidate",
+      "evidence": ["0001", "0002"],
+      "letters_count": 2,
+      "contexts": ["partner", "ministry"],
+      "conditions": {
+        "min_3_letters": false,
+        "min_3_contexts": false,
+        "topic_independent": false
+      },
+      "next_step": "проверить на письме вне молодёжной тематики (оба письма посвящены молодёжным проектам)",
+      "comments": "В 0003 есть «студенты»/«Студенческий фестиваль», но лексика «молодёжь/дарования» не используется."
+    },
+    {
+      "id": "A9",
+      "category": "tone",
+      "feature": "Высокая положительная оценка культурного значения («уникальный», «ведущих», «выдающихся», «признанный во всём мире»)",
+      "status": "candidate",
+      "evidence": ["0001", "0002", "0003"],
+      "letters_count": 3,
+      "contexts": ["partner", "ministry", "university"],
+      "conditions": {
+        "min_3_letters": true,
+        "min_3_contexts": true,
+        "topic_independent": false
+      },
+      "next_step": "подтвердить на письме вне культурной тематики (все три письма — о культурных проектах)",
+      "comments": "В 0003: «лучшие солисты», «звезды российского искусства». Независимость от темы не доказана."
+    },
+    {
+      "id": "A10",
+      "category": "address",
+      "feature": "Подпись-регалии: должность + звания + Ф.И.О.",
+      "status": "core",
+      "evidence": ["0001", "0002", "0003"],
+      "letters_count": 3,
+      "contexts": ["partner", "ministry", "university"],
+      "conditions": {
+        "min_3_letters": true,
+        "min_3_contexts": true,
+        "topic_independent": true
+      },
+      "next_step": "переведён в Core (VIV_STYLE)",
+      "comments": "Переведён в Core VIV_STYLE 2026-08-16."
+    },
+    {
+      "id": "A11",
+      "category": "formatting",
+      "feature": "Длинные сложные предложения, абзацная структура без списков",
+      "status": "core",
+      "evidence": ["0001", "0002", "0003"],
+      "letters_count": 3,
+      "contexts": ["partner", "ministry", "university"],
+      "conditions": {
+        "min_3_letters": true,
+        "min_3_contexts": true,
+        "topic_independent": true
+      },
+      "next_step": "переведён в Core (VIV_STYLE)",
+      "comments": "Переведён в Core VIV_STYLE 2026-08-16."
+    },
+    {
+      "id": "A12",
+      "category": "rhetoric",
+      "feature": "Аргументация «от контекста/значимости к действию»",
+      "status": "core",
+      "evidence": ["0001", "0002", "0003"],
+      "letters_count": 3,
+      "contexts": ["partner", "ministry", "university"],
+      "conditions": {
+        "min_3_letters": true,
+        "min_3_contexts": true,
+        "topic_independent": true
+      },
+      "next_step": "переведён в Core (VIV_STYLE)",
+      "comments": "Переведён в Core VIV_STYLE 2026-08-16."
+    },
+    {
+      "id": "C1",
+      "category": "address",
+      "feature": "Вежливая концовка «С уважением и надеждой на поддержку»",
+      "status": "candidate",
+      "evidence": ["0001"],
+      "letters_count": 1,
+      "contexts": ["partner"],
+      "conditions": {
+        "min_3_letters": false,
+        "min_3_contexts": false,
+        "topic_independent": true
+      },
+      "next_step": "в 0003 концовка упрощена («С уважением,») — полная форма не повторяется; оставить кандидатом или вынести в контекстный профиль",
+      "comments": ""
+    },
+    {
+      "id": "C2",
+      "category": "rhetoric",
+      "feature": "Приглашение к диалогу в конце («будем рады обсудить условия сотрудничества»)",
+      "status": "candidate",
+      "evidence": ["0001"],
+      "letters_count": 1,
+      "contexts": ["partner"],
+      "conditions": {
+        "min_3_letters": false,
+        "min_3_contexts": false,
+        "topic_independent": true
+      },
+      "next_step": "в 0003 приглашение к диалогу в конце отсутствует; оставить кандидатом",
+      "comments": "Вероятно, черта писем-приглашений к сотрудничеству."
+    },
+    {
+      "id": "C3",
+      "category": "address",
+      "feature": "Коллективное обращение «Уважаемые господа!» при массовых обращениях",
+      "status": "candidate",
+      "evidence": ["0001"],
+      "letters_count": 1,
+      "contexts": ["partner"],
+      "conditions": {
+        "min_3_letters": false,
+        "min_3_contexts": false,
+        "topic_independent": true
+      },
+      "next_step": "в 0003 коллективное обращение есть, но в форме «Уважаемый!»; форма «господа» не повторяется. Общее явление охвачено признаком A1 (Core).",
+      "comments": ""
+    },
+    {
+      "id": "C4",
+      "category": "composition",
+      "feature": "Нормативная ссылка («В рамках реализации Указа Президента…»)",
+      "status": "candidate",
+      "evidence": ["0002"],
+      "letters_count": 1,
+      "contexts": ["ministry"],
+      "conditions": {
+        "min_3_letters": false,
+        "min_3_contexts": false,
+        "topic_independent": true
+      },
+      "next_step": "в 0003 нормативная ссылка отсутствует (только упоминание Президентского фонда); вероятно, контекстная особенность обращений в министерства",
+      "comments": ""
+    },
+    {
+      "id": "C5",
+      "category": "formatting",
+      "feature": "Оборот «(далее – Проект)» при первом упоминании",
+      "status": "candidate",
+      "evidence": ["0002"],
+      "letters_count": 1,
+      "contexts": ["ministry"],
+      "conditions": {
+        "min_3_letters": false,
+        "min_3_contexts": false,
+        "topic_independent": true
+      },
+      "next_step": "в 0003 оборот «(далее – …)» не встречен; вероятно, контекстная особенность официальных документов",
+      "comments": ""
+    },
+    {
+      "id": "C6",
+      "category": "rhetoric",
+      "feature": "Связки «в этой связи», «прежде всего», «в свою очередь»",
+      "status": "candidate",
+      "evidence": [],
+      "letters_count": 0,
+      "contexts": [],
+      "conditions": {
+        "min_3_letters": false,
+        "min_3_contexts": false,
+        "topic_independent": false
+      },
+      "next_step": "заявлены ранее в черновике профиля; в письмах корпуса (0001–0003) не встречены; рассмотреть исключение",
+      "comments": ""
+    },
+    {
+      "id": "C7",
+      "category": "formatting",
+      "feature": "Вариантность написания «молодежь/молодёжь»",
+      "status": "candidate",
+      "evidence": ["0001", "0002"],
+      "letters_count": 2,
+      "contexts": ["partner", "ministry"],
+      "conditions": {
+        "min_3_letters": false,
+        "min_3_contexts": false,
+        "topic_independent": false
+      },
+      "next_step": "в 0003 слово «молодёжь» не встречается; решить как правило оформления (орфографическая норма), а не как признак стиля",
+      "comments": ""
+    }
+  ]
+}

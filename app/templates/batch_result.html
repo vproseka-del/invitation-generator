@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Письма сформированы</h1>
+    <p class="hint">Строк в таблице: {{ total }} · писем создано: {{ letters_count }} · ошибок: {{ errors_count }}.</p>
+
+    <p><a class="btn" href="{{ download_url }}">Скачать архив (ZIP)</a></p>
+
+    <h2>Журнал обработки</h2>
+    <table class="journal">
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Организация</th>
+                <th>Статус</th>
+                <th>Имя файла</th>
+                <th>Ошибка</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in journal %}
+                <tr>
+                    <td>{{ entry.number }}</td>
+                    <td>{{ entry.organization }}</td>
+                    <td>{{ entry.status }}</td>
+                    <td>{{ entry.filename }}</td>
+                    <td>{{ entry.error }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p class="back-link">
+        <a href="{{ url_for('batch.batch') }}">Загрузить другой файл</a>
+        · <a href="{{ url_for('main.index') }}">На главную</a>
+    </p>
+{% endblock %}

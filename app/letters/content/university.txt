@@ -1,0 +1,21 @@
+{greeting}
+
+{opener}
+
+{mission} {purpose}
+
+{why_now_argument}
+
+{recipient_relevance}
+
+{recipient_benefits}
+
+{call_to_action} {survey_note}{organizational_block}
+
+Благодарим вас за внимание к проекту и уделенное время. Если у вас появятся вопросы, мы будем рады на них ответить. Надеемся на плодотворное сотрудничество.
+
+С уважением,
+{signature_block}
+
+Контактная информация организационного комитета:
+электронная почта: {contact_email}

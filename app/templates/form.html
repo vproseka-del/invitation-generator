@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Создание письма-приглашения</h1>
+
+    <form method="post" action="{{ url_for('main.letter') }}" novalidate>
+        <div class="field">
+            <label for="recipient_category">Тип организации<span class="required">*</span></label>
+            <select id="recipient_category" name="recipient_category">
+                {% for category_id, label in categories %}
+                    <option value="{{ category_id }}" {% if data.get('recipient_category') == category_id %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+            {% if errors.get('recipient_category') %}
+                <p class="error">{{ errors.get('recipient_category') }}</p>
+            {% endif %}
+        </div>
+
+        {% for field, label in fields.items() %}
+            <div class="field">
+                <label for="{{ field }}">{{ label }}<span class="required">*</span></label>
+                <input type="text" id="{{ field }}" name="{{ field }}" value="{{ data.get(field, '') }}">
+                {% if errors.get(field) %}
+                    <p class="error">{{ errors.get(field) }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <div class="field">
+            <label for="letter_goal">Цель письма</label>
+            <select id="letter_goal" name="letter_goal">
+                <option value="">— не выбрано —</option>
+                {% for goal in goals %}
+                    <option value="{{ goal }}" {% if data.get('letter_goal') == goal %}selected{% endif %}>{{ goal }}</option>
+                {% endfor %}
+            </select>
+            <p class="hint">Пока не влияет на текст письма и подготовлен для следующего этапа развития.</p>
+        </div>
+
+        <button type="submit" class="btn">Сформировать письмо-приглашение</button>
+    </form>
+
+    <p class="back-link"><a href="{{ url_for('main.index') }}">На главную</a></p>
+{% endblock %}

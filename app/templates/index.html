@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <header class="site-header">
+        <h1>InvitationGenerator</h1>
+        <p class="subtitle">Цифровой ассистент оргкомитета проекта «Физики и лирики»</p>
+    </header>
+
+    <section class="start-card">
+        <a class="btn" href="{{ url_for('main.letter') }}">Сформировать письмо-приглашение</a>
+        <p class="hint">Заполните сведения об адресате и получите персонализированный текст письма.</p>
+    </section>
+
+    <p class="batch-link"><a href="{{ url_for('batch.batch') }}">Массовое создание писем</a></p>
+
+    <section class="future-section">
+    </section>
+
+    <footer class="site-footer">
+        InvitationGenerator · Приложение для подготовки пригласительных писем
+    </footer>
+{% endblock %}

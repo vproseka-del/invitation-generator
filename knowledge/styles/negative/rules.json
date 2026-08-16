@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "name": "Negative Style",
+    "version": "1.0",
+    "updated": "2026-08-06",
+    "description": "База правил проверки качества текста. Negative Style — независимый инспектор качества: не участвует в генерации, работает после неё и только сообщает о проблемах, ничего не исправляя."
+  },
+  "limits": {
+    "max_words": 500
+  },
+  "rules": [
+    {
+      "id": "NS-001",
+      "category": "forbidden_phrase",
+      "severity": "warning",
+      "source": "Negative Style",
+      "match": "regex",
+      "pattern": "\\bсрочно\\b",
+      "message": "Формулировка оказывает давление на адресата",
+      "recommendation": "Замените на нейтральную формулировку без указания срочности",
+      "status": "active"
+    },
+    {
+      "id": "NS-002",
+      "category": "forbidden_phrase",
+      "severity": "warning",
+      "source": "Negative Style",
+      "match": "substring",
+      "pattern": "в срочном порядке",
+      "message": "Формулировка оказывает давление на адресата",
+      "recommendation": "Замените на нейтральную формулировку без указания срочности",
+      "status": "active"
+    },
+    {
+      "id": "NS-003",
+      "category": "forbidden_phrase",
+      "severity": "warning",
+      "source": "Negative Style",
+      "match": "substring",
+      "pattern": "настоятельно просим",
+      "message": "Настойчивое давление вместо вежливой просьбы",
+      "recommendation": "Замените на нейтральное «просим вас»",
+      "status": "active"
+    },
+    {
+      "id": "NS-004",
+      "category": "forbidden_phrase",
+      "severity": "warning",
+      "source": "Negative Style",
+      "match": "substring",
+      "pattern": "настоятельно рекомендуем",
+      "message": "Настойчивое давление вместо вежливой просьбы",
+      "recommendation": "Замените на нейтральное «рекомендуем» или «предлагаем»",
+      "status": "active"
+    },
+    {
+      "id": "NS-005",
+      "category": "forbidden_phrase",
+      "severity": "warning",
+      "source": "Negative Style",
+      "match": "substring",
+      "pattern": "незамедлительно",
+      "message": "Формулировка оказывает давление на адресата",
+      "recommendation": "Замените на нейтральную формулировку без указания срочности",
+      "status": "active"
+    },
+    {
+      "id": "NS-006",
+      "category": "forbidden_phrase",
+      "severity": "warning",
+      "source": "Negative Style",
+      "match": "substring",
+      "pattern": "уникальная возможность",
+      "message": "Штамп искусственного маркетингового текста, преувеличение",
+      "recommendation": "Опишите реальную ценность участия конкретно",
+      "status": "active"
+    },
+    {
+      "id": "NS-007",
+      "category": "undesirable_pattern",
+      "severity": "warning",
+      "source": "Negative Style",
+      "match": "regex",
+      "pattern": "\\bнепревзойд\\w*\\b",
+      "message": "Преувеличение, характерное для рекламного стиля",
+      "recommendation": "Замените на сдержанную оценку",
+      "status": "active"
+    },
+    {
+      "id": "NS-008",
+      "category": "undesirable_pattern",
+      "severity": "warning",
+      "source": "Negative Style",
+      "match": "regex",
+      "pattern": "\\bне может не\\b",
+      "message": "Штамп отрицательно-утвердительной конструкции",
+      "recommendation": "Переформулируйте прямым утверждением",
+      "status": "active"
+    },
+    {
+      "id": "NS-009",
+      "category": "undesirable_pattern",
+      "severity": "warning",
+      "source": "Negative Style",
+      "match": "regex",
+      "pattern": "\\bнельзя не отметить\\b",
+      "message": "Штамп отрицательно-утвердительной конструкции",
+      "recommendation": "Переформулируйте прямым утверждением",
+      "status": "active"
+    },
+    {
+      "id": "NS-010",
+      "category": "undesirable_pattern",
+      "severity": "warning",
+      "source": "Negative Style",
+      "match": "regex",
+      "pattern": "!{2,}",
+      "message": "Несколько восклицательных знаков подряд нехарактерны для делового стиля",
+      "recommendation": "Оставьте один восклицательный знак или уберите",
+      "status": "active"
+    },
+    {
+      "id": "NS-011",
+      "category": "undesirable_pattern",
+      "severity": "warning",
+      "source": "Negative Style",
+      "match": "regex",
+      "case_sensitive": true,
+      "pattern": "\\b[А-ЯЁ]{5,}\\b",
+      "message": "Слово, полностью набранное заглавными буквами, воспринимается как крик",
+      "recommendation": "Перепишите в обычном регистре",
+      "status": "active"
+    },
+    {
+      "id": "NS-020",
+      "category": "placeholder_unfilled",
+      "severity": "error",
+      "source": "Project Arguments",
+      "match": "substring",
+      "pattern": "<укажите",
+      "message": "В тексте остался незаполненный плейсхолдер",
+      "recommendation": "Укажите реальные данные вместо плейсхолдера",
+      "status": "active"
+    },
+    {
+      "id": "NS-021",
+      "category": "placeholder_unfilled",
+      "severity": "error",
+      "source": "Project Arguments",
+      "match": "substring",
+      "pattern": "{",
+      "message": "В тексте остались необработанные фигурные скобки",
+      "recommendation": "Заполните или удалите конструкцию в фигурных скобках",
+      "status": "active"
+    },
+    {
+      "id": "NS-022",
+      "category": "placeholder_unfilled",
+      "severity": "recommendation",
+      "source": "Project Arguments",
+      "match": "substring",
+      "pattern": "ссылка на опрос будет направлена отдельным сообщением",
+      "message": "Ссылка на опрос не вставлена в текст письма",
+      "recommendation": "Если ссылка уже готова, вставьте её в текст письма",
+      "status": "active"
+    },
+    {
+      "id": "NS-030",
+      "category": "structure",
+      "severity": "warning",
+      "source": "Project Arguments",
+      "match": "required_element",
+      "pattern": "greeting",
+      "message": "В письме отсутствует обращение к адресату",
+      "recommendation": "Добавьте формулу обращения, например: «Уважаемый(ая) …!»",
+      "status": "active"
+    },
+    {
+      "id": "NS-031",
+      "category": "structure",
+      "severity": "warning",
+      "source": "Project Arguments",
+      "match": "required_element",
+      "pattern": "closing",
+      "message": "В письме отсутствует заключительная формула вежливости",
+      "recommendation": "Добавьте завершение, например: «С уважением, …»",
+      "status": "active"
+    }
+  ]
+}
