@@ -121,9 +121,15 @@ LETTER_GOALS = [
 
 def resolve_category(value):
     value = (value or "").strip()
+    if not value:
+        return None
     if value in SCENARIOS:
         return value
     for category_id, label in CATEGORY_LABELS.items():
         if value.lower() == label.lower():
+            return category_id
+    value_lower = value.lower()
+    for category_id, label in CATEGORY_LABELS.items():
+        if value_lower in label.lower():
             return category_id
     return None
