@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>Письма сформированы</h1>
-    <p class="hint">Строк в таблице: {{ total }} · писем создано: {{ letters_count }} · ошибок: {{ errors_count }}.</p>
+    <p class="hint">Строк в таблице: {{ total }} · писем создано: {{ letters_count }}{% if errors_count %} · ошибок: {{ errors_count }}{% endif %}.</p>
 
     <p><a class="btn" href="{{ download_url }}">Скачать архив (ZIP)</a></p>
 

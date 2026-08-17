@@ -16,6 +16,7 @@ from flask import (
 from app.batch.journal import build_journal, journal_to_csv
 from app.batch.packager import build_archive, sanitize_filename
 from app.batch.reader import read_xlsx
+from app.letters.docx_writer import text_to_docx_bytes
 from app.letters.generator import generate_letter
 from app.letters.projects import load_project_arguments
 from app.letters.scenarios import SCENARIOS, resolve_category
@@ -115,8 +116,8 @@ def batch():
             })
             continue
 
-        filename = f"{sanitize_filename(organization)}_{row}.txt"
-        letters[filename] = text
+        filename = f"{sanitize_filename(organization)}_{row}.docx"
+        letters[filename] = text_to_docx_bytes(text)
         rows_info.append({
             "row": row,
             "organization": organization,
