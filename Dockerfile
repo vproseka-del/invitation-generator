@@ -5,6 +5,9 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+ARG BUILD_ID=1
+RUN echo "Build ${BUILD_ID}" > /tmp/build_info
+
 COPY . .
 
 EXPOSE 8080
