@@ -7,6 +7,7 @@
     <p><a class="btn" href="{{ download_url }}">Скачать архив (ZIP)</a></p>
 
     <h2>Журнал обработки</h2>
+    {% set has_errors = errors_count > 0 %}
     <table class="journal">
         <thead>
             <tr>
@@ -14,7 +15,7 @@
                 <th>Организация</th>
                 <th>Статус</th>
                 <th>Имя файла</th>
-                <th>Ошибка</th>
+                {% if has_errors %}<th>Ошибка</th>{% endif %}
             </tr>
         </thead>
         <tbody>
@@ -24,7 +25,7 @@
                     <td>{{ entry.organization }}</td>
                     <td>{{ entry.status }}</td>
                     <td>{{ entry.filename }}</td>
-                    <td>{{ entry.error }}</td>
+                    {% if has_errors %}<td>{{ entry.error }}</td>{% endif %}
                 </tr>
             {% endfor %}
         </tbody>
