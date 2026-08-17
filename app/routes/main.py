@@ -1,8 +1,8 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, jsonify, render_template, request
 
 from app.letters.generator import generate_letter
 from app.letters.projects import load_project_arguments
-from app.letters.scenarios import CATEGORY_LABELS, LETTER_GOALS, SCENARIOS
+from app.letters.scenarios import CATEGORY_LABELS, LETTER_GOALS, SCENARIOS, resolve_category
 from app.stylecheck.checker import check_text
 
 main_bp = Blueprint("main", __name__)
@@ -52,3 +52,10 @@ def letter():
         return render_template("form.html", **_form_context(data, errors))
 
     return render_template("form.html", **_form_context({}, {}))
+
+
+@main_bp.route("/debug/resolve")
+def debug_resolve():
+    tests = ["Университет", "университет", "Университет / институт", "Министерство", "Партнёр", "СМИ"]
+    results = {v: resolve_category(v) for v in tests}
+    return jsonify(results)
