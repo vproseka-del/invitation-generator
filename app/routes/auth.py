@@ -4,7 +4,7 @@ from flask import Blueprint, redirect, render_template, request, session, url_fo
 
 auth_bp = Blueprint("auth", __name__)
 
-_PASSWORD = os.environ.get("APP_PASSWORD", "").strip()
+_PASSWORD = os.environ.get("LETTER_PASSWORD", "").strip()
 
 
 def is_authenticated():
