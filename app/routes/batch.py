@@ -20,6 +20,7 @@ from app.letters.docx_writer import text_to_docx_bytes
 from app.letters.generator import generate_letter
 from app.letters.projects import load_project_arguments
 from app.letters.scenarios import SCENARIOS, resolve_category
+from app.routes.auth import login_required
 
 batch_bp = Blueprint("batch", __name__)
 
@@ -32,6 +33,7 @@ OPTIONAL_COLUMNS = {"Цель письма": "letter_goal"}
 
 
 @batch_bp.route("/batch", methods=["GET", "POST"])
+@login_required
 def batch():
     if request.method == "GET":
         return render_template("batch_upload.html", required_columns=list(REQUIRED_COLUMNS), optional_columns=list(OPTIONAL_COLUMNS), error=None)
@@ -146,6 +148,7 @@ def batch():
 
 
 @batch_bp.route("/batch/download/<token>")
+@login_required
 def download(token):
     target_dir = os.path.join(BATCH_DIR, token)
     zip_path = os.path.join(target_dir, "letters.zip")

@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify, render_template, request
 
+from app.routes.auth import login_required
 from app.letters.generator import generate_letter
 from app.letters.projects import load_project_arguments
 from app.letters.scenarios import CATEGORY_LABELS, LETTER_GOALS, SCENARIOS, resolve_category
@@ -20,11 +21,13 @@ def _form_context(data, errors):
 
 
 @main_bp.route("/")
+@login_required
 def index():
     return render_template("index.html")
 
 
 @main_bp.route("/letter", methods=["GET", "POST"])
+@login_required
 def letter():
     if request.method == "POST":
         category = request.form.get("recipient_category", "").strip()

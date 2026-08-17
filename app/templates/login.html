@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Вход — InvitationGenerator{% endblock %}
+
+{% block content %}
+    <div style="max-width:360px; margin:4rem auto;">
+        <h1 style="font-size:1.3rem; margin-bottom:1.5rem;">Вход в генератор приглашений</h1>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form method="post">
+            <div class="field">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" autofocus required>
+            </div>
+            <div class="actions">
+                <button type="submit" class="btn">Войти</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
